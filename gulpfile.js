@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const watch = require('gulp-watch');
+const gulpif = require('gulp-if');
 const prefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
@@ -13,6 +14,8 @@ const pngquant = require('imagemin-pngquant');
 const rimraf = require('rimraf');
 const browserSync = require("browser-sync");
 const reload = browserSync.reload;
+
+const { NODE_ENV } = process.env;
 
 const path = {
   build: {
@@ -60,7 +63,7 @@ gulp.task('js:build', function () {
   gulp.src(path.src.js) //Найдем наш main файл
     .pipe(rigger()) //Прогоним через rigger
     .pipe(sourcemaps.init()) //Инициализируем sourcemap
-    .pipe(uglify()) //Сожмем наш js
+    .pipe(gulpif(NODE_ENV !== 'development', uglify() )  )
     .pipe(sourcemaps.write()) //Пропишем карты
     .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
     .pipe(reload({stream: true})); //И перезагрузим сервер
