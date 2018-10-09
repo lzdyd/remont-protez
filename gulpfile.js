@@ -151,7 +151,7 @@ gulp.task('clean', function (cb) {
   rimraf(path.clean, cb);
 });
 
-gulp.task('default', ['clean', 'build', 'webserver', 'watch']);
+gulp.task('default', ['build', 'webserver', 'watch']);
 // gulp.task('default', sequence('clean', 'build', 'webserver', 'watch'));
 
 // gulp.task('build:prod', sequence('clean', 'build', 'rev'));
