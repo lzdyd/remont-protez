@@ -1,3 +1,15 @@
+@import "./base/constants";
+
+@import "./layout/header";
+@import "./layout/nav";
+@import "./pages/mainPage";
+
+@import "./helpers/mixins.scss";
+
+@include font-face(HelveticaNeueCyr-Bold, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold", null, null, eot ttf woff);
+@include font-face(HelveticaNeueCyr-Heavy, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Heavy/HelveticaNeueCyr-Heavy", null, null, eot ttf woff);
+@include font-face(HelveticaNeueCyr-Medium, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium", null, null, eot ttf woff);
+@include font-face(HelveticaNeueCyr-Thin, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Thin/HelveticaNeueCyr-Thin", null, null, eot ttf woff);
 
 body {
   font-size: 16px;

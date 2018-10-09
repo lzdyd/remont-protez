@@ -1,0 +1,39 @@
+.main-header {
+  padding: 0.9375rem;
+
+  .main-header__logo .main-header__main-logo {
+    position: relative;
+    max-width: 100%;
+    object-fit: cover;
+    @media (min-width: 768px) {
+      height: 88px;
+    }
+
+    &:active {
+      top: 0.0625rem;
+    }
+  }
+
+  .main-header__contacts {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.125;
+    color: $main-green;
+
+    @media (min-width: 992px) {
+      margin-top: 0;
+    }
+
+    .telephone {
+      font-family: HelveticaNeueCyr-Heavy;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    .address {
+      font-size: 1.25rem;
+    }
+  }
+}
