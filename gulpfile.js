@@ -1,6 +1,9 @@
 'use strict';
 
 const gulp = require('gulp');
+const rev = require('gulp-rev');
+const revCollector = require('gulp-rev-collector');
+const sequence = require('run-sequence');
 const watch = require('gulp-watch');
 const gulpif = require('gulp-if');
 const prefixer = require('gulp-autoprefixer');
@@ -44,12 +47,11 @@ const path = {
 
 const config = {
   server: {
-    baseDir: "./build"
+    baseDir: './build'
   },
   tunnel: true,
   host: 'localhost',
-  port: 8000,
-  logPrefix: "Frontend_Devil"
+  port: 8000
 };
 
 gulp.task('html:build', function () {
@@ -76,7 +78,10 @@ gulp.task('style:build', function () {
     .pipe(prefixer()) //Добавим вендорные префиксы
     .pipe(cssmin()) //Сожмем
     .pipe(sourcemaps.write())
+    .pipe(gulpif(NODE_ENV !== 'development', rev()))
     .pipe(gulp.dest(path.build.css)) //И в build
+    .pipe(gulpif(NODE_ENV !== 'development', rev.manifest('manifest.json')))
+    .pipe(gulpif(NODE_ENV !== 'development', gulp.dest('build')))  // write manifest to build dir
     .pipe(reload({stream: true}));
 });
 
@@ -95,6 +100,21 @@ gulp.task('image:build', function () {
 gulp.task('fonts:build', function() {
   gulp.src(path.src.fonts)
     .pipe(gulp.dest(path.build.fonts))
+});
+
+gulp.task('rev', function () {
+  return gulp.src(['build/manifest.json', 'build/index.html'])
+    .pipe( revCollector({
+      replaceReved: true,
+      dirReplacements: {
+        '/css/': './css/',
+        '/js/': '/build/js/',
+        'cdn/': function(manifest_value) {
+          return '//cdn' + (Math.floor(Math.random() * 9) + 1) + '.' + 'exsample.dot' + '/img/' + manifest_value;
+        }
+      }
+    }) )
+    .pipe( gulp.dest('build') );
 });
 
 gulp.task('build', [
@@ -131,4 +151,7 @@ gulp.task('clean', function (cb) {
   rimraf(path.clean, cb);
 });
 
-gulp.task('default', ['build', 'webserver', 'watch']);
+gulp.task('default', ['clean', 'build', 'webserver', 'watch']);
+// gulp.task('default', sequence('clean', 'build', 'webserver', 'watch'));
+
+// gulp.task('build:prod', sequence('clean', 'build', 'rev'));
