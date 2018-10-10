@@ -1,0 +1,50 @@
+.main-footer {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: $main-light-blue;
+  color: $main-green;
+  font-family: MyriadPro-Regular, Arial, sans-serif;
+
+  @media (min-width: 992px) {
+    
+  }
+
+  .main-footer__nav {
+    margin-top: 1rem;
+
+    @media (min-width: 992px) {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:focus {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .main-footer__contacts {
+    .telephone {
+      margin-bottom: 0.125rem;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:focus {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

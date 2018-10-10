@@ -1,8 +1,13 @@
 @import "./base/constants";
 
 @import "./layout/header";
+@import "./layout/footer";
 @import "./layout/nav";
 @import "./pages/mainPage";
+
+@import "./components/rp-jumbotron";
+@import "./components/rp-jumbotron-border";
+@import "./components/rp-list";
 
 @import "./helpers/mixins.scss";
 
@@ -10,7 +15,13 @@
 @include font-face(HelveticaNeueCyr-Heavy, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Heavy/HelveticaNeueCyr-Heavy", null, null, eot ttf woff);
 @include font-face(HelveticaNeueCyr-Medium, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium", null, null, eot ttf woff);
 @include font-face(HelveticaNeueCyr-Thin, "../fonts/HelveticaNeueCyr/HelveticaNeueCyr-Thin/HelveticaNeueCyr-Thin", null, null, eot ttf woff);
+@include font-face(MyriadPro-Light, "../fonts/MyriadPro/MyriadPro-Light/MyriadPro-Light", null, null, eot ttf woff);
+@include font-face(MyriadPro-Regular, "../fonts/MyriadPro/MyriadPro-Regular/MyriadPro-Regular", null, null, eot ttf woff);
+@include font-face(MyriadPro-Bold-Italic, "../fonts/MyriadPro/MyriadPro-Bold-Italic/MyriadPro-BoldIt", null, null, eot ttf woff);
+@include font-face(MyriadPro-Bold, "../fonts/MyriadPro/MyriadPro-Bold/MyriadPro-Bold", null, null, eot ttf woff);
+@include font-face(MyriadPro-Regular-Italic, "../fonts/MyriadPro/MyriadPro-Regular-Italic/MyriadPro-It", null, null, eot ttf woff);
 
 body {
   font-size: 16px;
 }
+
