@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Отзывы</title>
+    //= templates/dependecies.css.html
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+//= templates/header.html
+
+//= templates/nav.html
+
+<main class="prices-page main-content">
+    <div class="container">
+        <div class="main-content__wrap">
+            <div class="row">
+                <div class="col-md-4 col-lg-3" align="center">
+                    //= templates/main-content-get-price.html
+                </div>
+
+                <div class="col-md-8 col-lg-9">
+                    <div class="main-content__main-text-heading">
+                        Отзывы
+                    </div>
+
+                    <hr class="main-content__main-text-hr" />
+
+                    <div id="disqus_thread"></div>
+                    <script>
+
+                      /**
+                       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                      /*
+                      var disqus_config = function () {
+                      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                      };
+                      */
+                      (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://http-remont-protez-ru.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                      })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+//= templates/footer.html
+
+//= templates/dependecies.js.html
+</body>
+</html>
