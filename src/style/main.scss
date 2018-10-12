@@ -8,6 +8,7 @@
 @import "./components/rp-jumbotron-border";
 @import "./components/rp-list";
 @import "./components/rp-main-component";
+@import "./components/rp-button";
 
 @import "./helpers/mixins.scss";
 
@@ -21,7 +22,17 @@
 @include font-face(MyriadPro-Bold, "../fonts/MyriadPro/MyriadPro-Bold/MyriadPro-Bold", null, null, eot ttf woff);
 @include font-face(MyriadPro-Regular-Italic, "../fonts/MyriadPro/MyriadPro-Regular-Italic/MyriadPro-It", null, null, eot ttf woff);
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-size: 16px;
+  margin-bottom: 394px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 228px;
+  }
 }
 
