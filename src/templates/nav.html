@@ -12,13 +12,21 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Главная</a>
-                    <a class="nav-item nav-link" href="#">Услуги</a>
+                    <a class="nav-item nav-link" href="/views/">Главная</a>
+                    <a class="nav-item nav-link" href="/views/services">Услуги</a>
                     <a class="nav-item nav-link" href="#">Цены</a>
                     <a class="nav-item nav-link" href="#">Отзывы</a>
                     <a class="nav-item nav-link" href="#">О нас</a>
                     <a class="nav-item nav-link" href="#">Контакты</a>
                 </div>
+
+                <script id="main-nav__nav-bar" type="text/x-handlebars-template">
+                    {{#each items}}
+                    <li class="main-menu__item {{#if active}} main-menu__item_type-active {{/if}}">
+                        <a href="#{{code}}">{{label}}</a>
+                    </li>
+                    {{/each}}
+                </script>
             </div>
         </nav>
     </div>

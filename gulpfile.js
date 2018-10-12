@@ -22,15 +22,15 @@ const { NODE_ENV } = process.env;
 
 const path = {
   build: {
-    html: 'build/',
+    html: 'build/views',
     js: 'build/js/',
     css: 'build/css/',
     img: 'build/img/',
     fonts: 'build/fonts/'
   },
   src: {
-    html: 'src/*.html',
-    js: 'src/js/main.js',
+    html: ['src/index.html', 'src/views/**/*.html'],
+    js: 'src/js/**/*.js',
     style: 'src/style/main.scss',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*'
