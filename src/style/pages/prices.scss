@@ -1,0 +1,16 @@
+.prices-page {
+  .prices-page__table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: MyriadPro-Regular, Arial, sans-serif;
+
+    td {
+      text-align: center;
+    }
+  }
+
+  .prices-page__bold {
+    font-size: 1.25rem;
+    font-family: MyriadPro-Bold, Arial, sans-serif;
+  }
+}

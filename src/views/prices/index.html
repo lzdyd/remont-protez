@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Услуги</title>
+    //= templates/dependecies.css.html
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    //= templates/header.html
+
+    //= templates/nav.html
+
+    <main class="prices-page main-content">
+        <div class="container">
+            <div class="main-content__wrap">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3" align="center">
+                        //= templates/main-content-get-price.html
+                    </div>
+
+                    <div class="col-md-8 col-lg-9">
+                        <div class="main-content__main-text-heading">
+                            Цены
+                        </div>
+
+                        <hr class="main-content__main-text-hr" />
+
+                        <table class="prices-page__table table table-responsive-md table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">Услуга</th>
+                                <th scope="col">Время ремонта</th>
+                                <th scope="col">Цена</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">Ремонт</th>
+                                <td>24 часа</td>
+                                <td>1500 руб.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Выезд к заказчику и оформление заказа</th>
+                                <td>-</td>
+                                <td>Бесплатно</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Доставка отремонтированного изделия</th>
+                                <td>-</td>
+                                <td>Бесплатно</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="main-content__main-text-paragraph">
+                            <strong class="prices-page__bold">Срочный ремонт протеза</strong>, время исполнения заказа
+                            - <strong class="prices-page__bold">4 часа</strong>, стоимость - 3000 руб
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    //= templates/footer.html
+
+    //= templates/dependecies.js.html
+</body>
+</html>
