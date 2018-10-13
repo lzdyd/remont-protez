@@ -1,11 +1,23 @@
 .prices-page {
+  .prices-page__table-wrap {
+    width: 100%;
+    border: 0.1875rem solid $main-green;
+    border-radius: 0.625rem;
+  }
+
   .prices-page__table {
     border-collapse: collapse;
     border-spacing: 0;
     font-family: MyriadPro-Regular, Arial, sans-serif;
 
-    td {
+    td, th {
       text-align: center;
+    }
+
+    thead {
+      th {
+        border-top: none;
+      }
     }
   }
 
