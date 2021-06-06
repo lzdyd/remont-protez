@@ -1,0 +1,18 @@
+.font-face(@font-family, @file-path, @font-weight: normal, @font-style: normal) {
+  @font-face {
+    font-family: @font-family;
+    src: url('@{file-path}.eot');
+    src: url('@{file-path}.eot?#iefix') format('embedded-opentype'),
+    url('@{file-path}.woff') format('woff'),
+    url('@{file-path}.ttf') format('truetype');
+    font-weight: @font-weight;
+    font-style: @font-style;
+  }
+}
+
+.font(@font-family, @font-size: 1rem, @font-weight: normal, @font-style: normal) {
+  font-family: @font-family;
+  font-size: @font-size;
+  font-weight: @font-weight;
+  font-style: @font-style;
+}

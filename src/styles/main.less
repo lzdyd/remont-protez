@@ -1,0 +1,91 @@
+@import './index';
+
+html {
+  .font(MyriadPro-Regular);
+  font-size: 16px;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media @mobile, @tablet {
+    margin-top: 24px;
+    padding: 0 12px;
+  }
+
+  @media @desktop {
+    margin-top: 48px;
+  }
+
+  /* COMMON */
+  &__info-jumbotron {
+    margin-top: 0.75rem;
+  }
+  /* COMMON END */
+
+  &__sidebar-wrapper {
+    @media @mobile, @tablet {
+      display: none;
+    }
+
+    @media @desktop {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 25%;
+      padding-right: 32px;
+    }
+
+    .rp-jumbotron {
+      padding: 0;
+    }
+
+    .rp-heading {
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__sidebar {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  &__sidebar-hr {
+    border: none;
+    border-top: 1px solid @main-green;
+  }
+
+  &__sidebar-button {
+    margin-top: 0.625rem;
+  }
+
+  &__primary-jumbotron-list {
+    li + li {
+      margin-top: 2px;
+    }
+  }
+
+  &__primary-jumbotron-phone {
+    text-align: center;
+
+    @media @mobile, @tablet {
+      margin-top: 8px;
+    }
+  }
+
+  &__primary-jumbotron-phone-link {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &__secondary-jumbotron {
+    @media @tablet-up {
+      text-align: center;
+    }
+  }
+}

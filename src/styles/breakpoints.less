@@ -1,0 +1,16 @@
+@screen-sm-min: 576px;
+@screen-md-min: 768px;
+@screen-lg-min: 992px;
+@screen-xl-min: 1200px;
+
+@max-width-md: @screen-md-min - 1;
+@max-width-md-x: @screen-lg-min - 1;
+@max-width-lg: @screen-xl-min - 1;
+
+@mobile: ~'only screen and (max-width: @{max-width-md})';
+@mobile-up: ~'only screen and (min-width: @{screen-sm-min})';
+
+@tablet: ~'only screen and (max-width: @{max-width-lg})';
+@tablet-up: ~'only screen and (min-width: @{screen-md-min})';
+
+@desktop: ~'only screen and (min-width: @{screen-xl-min})';

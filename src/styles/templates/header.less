@@ -1,0 +1,140 @@
+@import '../index';
+
+.main-header {
+  background-color: @main-blue;
+  color: @white;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    max-width: @screen-xl-min;
+    margin: 0 auto;
+
+    @media @mobile, @tablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-shrink: 0;
+    height: 100%;
+    width: 205px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__menu {
+    @media @mobile, @tablet {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      display: none;
+      background-color: @white;
+      border-top: 2px solid @main-green;
+
+      &--active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        border-bottom: 2px solid @main-green;
+      }
+    }
+
+    @media @desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-grow: 1;
+    }
+  }
+
+  &__nav {
+    @media @mobile, @tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media @desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+  }
+
+  &__link {
+    font-size: 1.25rem;
+
+    @media @mobile, @tablet {
+      padding: 1rem 0;
+      border-bottom: 1px solid @main-blue;
+      color: @main-green;
+      text-align: center;
+    }
+
+    @media @desktop {
+      color: @white;
+
+      &:not(:first-child) {
+        margin-left: 32px;
+      }
+
+      &:hover {
+        opacity: .85;
+      }
+    }
+  }
+
+  &__phone {
+    @media @mobile, @tablet {
+      color: black;
+      padding: 0.75rem 0;
+      text-align: center;
+    }
+
+    @media @desktop {
+      color: @white;
+      font-size: 1rem;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    width: 25px;
+    height: 2px;
+    margin-right: 20px;
+    background-color: @white;
+
+    @media @desktop {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+}
